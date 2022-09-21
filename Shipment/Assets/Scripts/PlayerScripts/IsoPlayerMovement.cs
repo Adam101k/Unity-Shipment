@@ -34,7 +34,7 @@ public class IsoPlayerMovement : MonoBehaviour
         //Move in the direction we are aiming
         var movementVector = MoveTowardTarget(targetVector);
 
-        if(Input.GetKeyDown("left shift"))
+        if(Input.GetKey("left shift"))
             speed = runSpeed * Time.deltaTime;
         else
             speed = moveSpeed * Time.deltaTime;
