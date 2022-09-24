@@ -8,7 +8,7 @@ public class FuelTank : MonoBehaviour, InteractInterface
     public string InteractionPrompt => _prompt;
     public bool InteractBool(Interact interact)
     {
-        Debug.Log("Press E To Pick Up Fuel Tank");
+        Debug.Log("Picked Up Fuel Tank");
         return true;
     }
 }

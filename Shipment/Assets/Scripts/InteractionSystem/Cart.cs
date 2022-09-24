@@ -8,7 +8,7 @@ public class Cart : MonoBehaviour, InteractInterface
     public string InteractionPrompt => _prompt;
     public bool InteractBool(Interact interact)
     {
-        Debug.Log("Press E To Pick Up Cart");
+        Debug.Log("Picked Up Cart");
         return true;
     }
 }
