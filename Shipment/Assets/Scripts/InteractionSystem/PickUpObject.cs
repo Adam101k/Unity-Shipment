@@ -74,7 +74,7 @@ public class PickUpObject : MonoBehaviour
 
         //add random rotation
         float random = Random.Range(-1f, 1f);
-        rb.AddTorque(new Vector3(random, random, random) * 10);
+        rb.AddTorque(new Vector3(random, random, random) * 3);
         gasScript.enabled = false;
     }
 }
