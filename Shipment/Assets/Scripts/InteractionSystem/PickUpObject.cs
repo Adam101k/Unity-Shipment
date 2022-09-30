@@ -8,7 +8,7 @@ public class PickUpObject : MonoBehaviour
     public FuelTank gasScript;
     public Rigidbody rb;
     public BoxCollider coll;
-    public Transform player, fpsCam;
+    public Transform player, gasContainer, fpsCam;
 
     public float pickUpRange;
     public float dropForwardForce, dropUpwardForce;
@@ -42,7 +42,7 @@ public class PickUpObject : MonoBehaviour
     }
     private void PickUpItem() 
     {
-        transform.SetParent(player);
+        transform.SetParent(gasContainer);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
         transform.localScale = Vector3.one;
@@ -74,7 +74,7 @@ public class PickUpObject : MonoBehaviour
 
         //add random rotation
         float random = Random.Range(-1f, 1f);
-        rb.AddTorque(new Vector3(random, random, random) * 3);
+        rb.AddTorque(new Vector3(random, random, random) * 10);
         gasScript.enabled = false;
     }
 }
