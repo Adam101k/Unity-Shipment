@@ -1,9 +1,11 @@
+//do not use this script, going to merge these scripts with PickUpObject.cs
+//keeping this script for reference on interactionPrompt
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Interact : MonoBehaviour
+public class Interactor : MonoBehaviour
 {
     [SerializeField] private Transform _interactionPoint;
     [SerializeField] private float _interactionPointRadius = 0.5f;
@@ -27,7 +29,7 @@ public class Interact : MonoBehaviour
             {
                 if (!_interactionPrompt.isPromptOn) _interactionPrompt.setUp(_interactable.InteractionPrompt);
 
-                if (Keyboard.current.eKey.wasPressedThisFrame) _interactable.InteractBool(this);
+                if ( Input.GetKeyDown(KeyCode.E) ) _interactable.InteractBool(this);
             }
         }
         else

@@ -1,3 +1,6 @@
+//do not use this script, going to merge these scripts with PickUpObject.cs
+//keeping this script for reference on interactionPrompt
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +15,6 @@ public class InteractionPrompt : MonoBehaviour
     {
         _mainCamera = Camera.main;
         _promptField.SetActive(false);
-    }
-    private void LateUpdate()
-    {
-        var rotation = _mainCamera.transform.rotation;
-        transform.LookAt(transform.position + rotation * Vector3.forward, rotation * Vector3.up);
     }
     public bool isPromptOn = false;
     public void setUp(string promptText) 
