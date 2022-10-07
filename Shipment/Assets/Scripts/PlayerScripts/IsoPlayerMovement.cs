@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class IsoPlayerMovement : MonoBehaviour
 {
     private InputHandler _input;
+
+    [SerializeField]
+    public VisualEffect runParticle; 
 
     [SerializeField]
     private float moveSpeed;
@@ -34,10 +38,14 @@ public class IsoPlayerMovement : MonoBehaviour
         //Move in the direction we are aiming
         var movementVector = MoveTowardTarget(targetVector);
 
-        if(Input.GetKey("left shift"))
+        if(Input.GetKey("left shift")) {
             speed = runSpeed * Time.deltaTime;
-        else
+        } else {
             speed = moveSpeed * Time.deltaTime;
+        }
+        if(Input.GetKey("left shift") && movementVector.magnitude > 0) {
+            CreateDust();
+        }
         //Rotate in the direction we are traveling
         RotateTowardMovementVector(movementVector);
         if(!rotateTowardsMouse)
@@ -72,5 +80,9 @@ public class IsoPlayerMovement : MonoBehaviour
         targetVector = Vector3.Normalize(targetVector);
         transform.position = targetPosition;
         return targetVector;
+    }
+
+    void CreateDust() {
+        runParticle.Play();
     }
 }
