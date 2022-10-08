@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PickUpObject : MonoBehaviour
 {
     public FuelTank gasScript;
     public Rigidbody rb;
     public BoxCollider coll;
-    public Transform player, gasContainer, fpsCam;
+    public Transform player, gasContainer;
 
     public float pickUpRange;
     public float dropForwardForce, dropUpwardForce;
@@ -36,9 +35,9 @@ public class PickUpObject : MonoBehaviour
     private void Update()
     {
         Vector3 distanceToPlayer = player.position - transform.position;
-        if (!equipped && distanceToPlayer.magnitude <= pickUpRange && Keyboard.current.eKey.wasPressedThisFrame && !carryingItem) PickUpItem();
+        if (!equipped && distanceToPlayer.magnitude <= pickUpRange && Input.GetKeyDown(KeyCode.E) && !carryingItem) PickUpItem();
 
-        if (equipped && Keyboard.current.qKey.wasPressedThisFrame) DropItem();
+        if (equipped && Input.GetKeyDown(KeyCode.Q) ) DropItem();
     }
     private void PickUpItem() 
     {
@@ -65,13 +64,6 @@ public class PickUpObject : MonoBehaviour
         rb.isKinematic = false;
         coll.isTrigger = false;
         
-        //matches velocity of player
-        rb.velocity = player.GetComponent<Rigidbody>().velocity;
-
-        //add force
-        rb.AddForce(fpsCam.forward * dropForwardForce, ForceMode.Impulse);
-        rb.AddForce(fpsCam.up * dropUpwardForce, ForceMode.Impulse);
-
         //add random rotation
         float random = Random.Range(-1f, 1f);
         rb.AddTorque(new Vector3(random, random, random) * 10);
