@@ -44,7 +44,7 @@ public class PickUpObject : MonoBehaviour
         transform.SetParent(gasContainer);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
-        transform.localScale = Vector3.one;
+        //transform.localScale = Vector3.one;
 
         equipped = true;
         carryingItem = true;
