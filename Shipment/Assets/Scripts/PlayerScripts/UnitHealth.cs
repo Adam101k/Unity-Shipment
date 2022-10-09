@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class UnitHealth : MonoBehaviour
 {
     public float health;
     public float maxHealth;
