@@ -5019,17 +5019,18 @@ MonoBehaviour:
   checkLayers:
     serializedVersion: 2
     m_Bits: 8
-  UnitAgroRange: 6.69
+  UnitAgroRange: 8.68
   UnitDamageRange: 2
+  walkPointRange: 12
   walkSpeed: 5
   chaseSpeed: 7
   enemyAgro: 0
-  walkPointRange: 12
   damageTimeout: 1
-  wonderTimeout: 3
-  canTakeDamage: 1
-  BloodHitEffect: {fileID: 0}
+  wonderTimeout: 15
   damage: 1
+  canTakeDamage: 1
+  canWander: 1
+  BloodHitEffect: {fileID: 0}
 --- !u!1 &1086831934
 GameObject:
   m_ObjectHideFlags: 0
@@ -8634,15 +8635,16 @@ MonoBehaviour:
     m_Bits: 8
   UnitAgroRange: 4.29
   UnitDamageRange: 1.29
+  walkPointRange: 0
   walkSpeed: 0
   chaseSpeed: 0
   enemyAgro: 0
-  walkPointRange: 0
   damageTimeout: 1
   wonderTimeout: 1
-  canTakeDamage: 1
-  BloodHitEffect: {fileID: 0}
   damage: 1
+  canTakeDamage: 1
+  canWander: 1
+  BloodHitEffect: {fileID: 0}
 --- !u!195 &919132148367085458
 NavMeshAgent:
   m_ObjectHideFlags: 0

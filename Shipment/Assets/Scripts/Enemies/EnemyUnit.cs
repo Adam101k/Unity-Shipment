@@ -13,21 +13,19 @@ public class EnemyUnit : MonoBehaviour
     public LayerMask checkLayers;
     public float UnitAgroRange; //How Close the unit has to be to start moving
     public float UnitDamageRange; //How Close the unit has to be to deal damage
-    public float walkSpeed;
-    public float chaseSpeed;
+    public float walkPointRange; //Radius value for where the enemy can wonder
+    public float walkSpeed; //How fast the enemy moves when wondering
+    public float chaseSpeed; //How fast the enemy moves when agro
     public bool enemyAgro;
 
-    private Vector3 walkPoint;
-    public float walkPointRange;
-
     public float damageTimeout = 1f;
-
     public float wonderTimeout = 1f;
+    public float damage = 1;
     public bool canTakeDamage = true;
     public bool canWander = true;
 
     public GameObject BloodHitEffect;
-    public float damage = 1;
+    private Vector3 walkPoint;
 
     // Start is called before the first frame update
     void Start() {
@@ -83,7 +81,7 @@ public class EnemyUnit : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, UnitAgroRange);
         Gizmos.DrawWireSphere(transform.position, UnitDamageRange);
         Gizmos.DrawWireSphere(transform.position, walkPointRange);
-        Gizmos.DrawSphere(walkPoint, 3);
+        Gizmos.DrawSphere(walkPoint, 1);
     }
 
     public Vector3 Wander() {
