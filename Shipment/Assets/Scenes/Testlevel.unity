@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.437184, g: 0.7544493, b: 1.0290301, a: 1}
+  m_IndirectSpecularColor: {r: 0.43718356, g: 0.75444937, b: 1.02903, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 41712977}
   - component: {fileID: 41712979}
   - component: {fileID: 41712980}
+  - component: {fileID: 41712981}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -284,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7dffc452a8a7c646b5d890d36d14405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WallMaterial: {fileID: 2100000, guid: 395afdeab39cb4642bf6074991c887bf, type: 2}
+  WallMaterial: {fileID: 2100000, guid: 5748f15b36f57d24289765f25f4d3116, type: 2}
   Camera: {fileID: 792349548}
   Mask:
     serializedVersion: 2
@@ -305,6 +306,20 @@ MonoBehaviour:
   maxHealth: 10
   healthBarUI: {fileID: 857623375}
   slider: {fileID: 1914931058}
+--- !u!136 &41712981
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41712972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &43127322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -679,7 +694,7 @@ GameObject:
   - component: {fileID: 68663162}
   - component: {fileID: 68663161}
   - component: {fileID: 68663160}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +725,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 68663158}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -5346,7 +5361,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   UnitAgroRange: 8.68
-  UnitDamageRange: 2
+  UnitDamageRange: 3
   walkPointRange: 12
   walkSpeed: 5
   chaseSpeed: 7
@@ -7958,7 +7973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -570.6, y: 287.3}
+  m_AnchoredPosition: {x: -412, y: 168}
   m_SizeDelta: {x: 171.6181, y: 26.3063}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1914931058
@@ -8161,7 +8176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 395afdeab39cb4642bf6074991c887bf, type: 2}
+  - {fileID: 2100000, guid: 5748f15b36f57d24289765f25f4d3116, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
