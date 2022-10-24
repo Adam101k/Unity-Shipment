@@ -305,6 +305,7 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   healthBarUI: {fileID: 857623375}
+  cam: {fileID: 792349545}
   slider: {fileID: 1914931058}
 --- !u!136 &41712981
 CapsuleCollider:
@@ -5243,6 +5244,7 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   healthBarUI: {fileID: 80866338}
+  cam: {fileID: 792349545}
   slider: {fileID: 989088759}
 --- !u!195 &1086233391
 NavMeshAgent:
@@ -5371,7 +5373,7 @@ MonoBehaviour:
   damage: 1
   canTakeDamage: 1
   canWander: 1
-  BloodHitEffect: {fileID: 0}
+  BloodHitEffect: {fileID: 7394225628831465132, guid: 39940209985399b428a362f8260ca8c5, type: 3}
 --- !u!1 &1086831934
 GameObject:
   m_ObjectHideFlags: 0

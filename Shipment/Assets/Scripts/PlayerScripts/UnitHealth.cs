@@ -8,6 +8,7 @@ public class UnitHealth : MonoBehaviour
     public float maxHealth;
 
     public GameObject healthBarUI;
+    public GameObject cam;
     public Slider slider;
 
     void Start()
@@ -19,6 +20,7 @@ public class UnitHealth : MonoBehaviour
     void Update()
     {
         slider.value = CalculateHealth();
+        healthBarUI.transform.LookAt(cam.transform);
 
         if(health < maxHealth)
         {

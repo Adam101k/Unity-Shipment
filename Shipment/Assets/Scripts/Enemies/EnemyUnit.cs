@@ -17,7 +17,7 @@ public class EnemyUnit : MonoBehaviour
     public float walkSpeed; //How fast the enemy moves when wondering
     public float chaseSpeed; //How fast the enemy moves when agro
     public bool enemyAgro;
-
+    UnitHealth eHealth;
     public float damageTimeout = 1f;
     public float wonderTimeout = 1f;
     public float damage = 1;
@@ -56,7 +56,7 @@ public class EnemyUnit : MonoBehaviour
         } else {
             enemyAgro = true;
         }
-        if(canTakeDamage == true && enemyAgro == true && DamageColliders[0].gameObject.layer == checkLayers)
+        if(canTakeDamage == true && enemyAgro == true && DamageColliders[0].gameObject.tag == "Player")
         {
             DealDamage();
             StartCoroutine(damageTimer());
@@ -65,9 +65,9 @@ public class EnemyUnit : MonoBehaviour
     }
 
     public void DealDamage() {
-         Debug.Log("This is being called");
+        Debug.Log("Damage is being called");
         GameObject.Instantiate(BloodHitEffect, AgroColliders[0].transform.position, AgroColliders[0].transform.rotation);
-        UnitHealth eHealth = DamageColliders[0].gameObject.GetComponent<UnitHealth>();
+        eHealth = DamageColliders[0].gameObject.GetComponent<UnitHealth>();
         eHealth.AdjustCurrentHealth(damage);
         
     }
