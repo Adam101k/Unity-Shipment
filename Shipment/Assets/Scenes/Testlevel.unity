@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.437184, g: 0.7544493, b: 1.0290301, a: 1}
+  m_IndirectSpecularColor: {r: 0.43718356, g: 0.75444937, b: 1.02903, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5345,7 +5345,7 @@ Transform:
   m_Children:
   - {fileID: 80866339}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1086233396
 MonoBehaviour:
@@ -6456,7 +6456,7 @@ GameObject:
   - component: {fileID: 1431957392}
   - component: {fileID: 1431957391}
   - component: {fileID: 1431957390}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6470,7 +6470,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431957388}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -33, y: 10.5, z: -10.75}
   m_LocalScale: {x: 7, y: 20, z: 7}
   m_ConstrainProportionsScale: 0
@@ -6511,7 +6511,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2ef212d3d6d5a2141b99450d6636f36d, type: 2}
+  - {fileID: 2100000, guid: 5748f15b36f57d24289765f25f4d3116, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8137,12 +8137,13 @@ GameObject:
   - component: {fileID: 1972057821}
   - component: {fileID: 1972057824}
   - component: {fileID: 1972057823}
-  - component: {fileID: 1972057822}
   - component: {fileID: 1972057825}
-  - component: {fileID: 1972057828}
   - component: {fileID: 1972057829}
+  - component: {fileID: 1972057828}
+  - component: {fileID: 1972057822}
+  - component: {fileID: 1972057830}
   m_Layer: 0
-  m_Name: StaffModel
+  m_Name: Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8161,7 +8162,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &1972057822
 BoxCollider:
@@ -8284,8 +8285,28 @@ MonoBehaviour:
   pickUpRange: 3
   dropForwardForce: 0
   dropUpwardForce: 0
-  m_Animator: {fileID: 1972057825}
   equipped: 0
+--- !u!114 &1972057830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972057820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667f47ea5ffddc44e8d47a761e3031ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTimeout: 1
+  canDealDamage: 0
+  damage: 1
+  checkLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  UnitDamageRange: 3
+  hitEffect: {fileID: 7394225628831465132, guid: 39940209985399b428a362f8260ca8c5, type: 3}
+  weaponI: {fileID: 1972057829}
 --- !u!1 &1974558694
 GameObject:
   m_ObjectHideFlags: 0
@@ -8394,7 +8415,6 @@ GameObject:
   - component: {fileID: 1974741181}
   - component: {fileID: 1974741180}
   - component: {fileID: 1974741179}
-  - component: {fileID: 1974741178}
   - component: {fileID: 1974741177}
   - component: {fileID: 1974741176}
   - component: {fileID: 1974741175}
@@ -8469,20 +8489,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prompt: Press E To Pick Up
---- !u!136 &1974741178
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974741173}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1974741179
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8546,7 +8552,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2035407928
 GameObject:
@@ -8865,7 +8871,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2125874574
 GameObject:

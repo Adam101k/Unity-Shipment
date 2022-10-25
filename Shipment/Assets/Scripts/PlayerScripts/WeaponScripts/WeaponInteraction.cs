@@ -11,17 +11,19 @@ public class WeaponInteraction : MonoBehaviour
     public LayerMask checkLayers;
     public float pickUpRange;
     public float dropForwardForce, dropUpwardForce;
-    public Animator m_Animator;
+    Animator m_Animator;
     public bool equipped;
     public static bool carryingItem;
 
     private void Start()
     {
+        m_Animator = GetComponent<Animator>();
         //set up
         if (!equipped) 
         {
             rb.isKinematic = false;
             coll.isTrigger = false;
+            m_Animator.enabled = false;
         }
         if (equipped)
         {
@@ -29,20 +31,24 @@ public class WeaponInteraction : MonoBehaviour
             rb.isKinematic = true;
             coll.isTrigger = true;
             carryingItem = true;
+            m_Animator.enabled = true;
         }
     }
     private void Update()
     {
-        m_Animator.SetBool("IsEquipped", equipped);
         distanceCollider = Physics.OverlapSphere(transform.position, pickUpRange, checkLayers);
         if(distanceCollider.Length == 0)   {
             
         } else {
             if(!equipped && Input.GetKeyDown(KeyCode.E) && !carryingItem) {
                 PickUpItem();
+                m_Animator.enabled = true;
             }
         }
-        if (equipped && Input.GetKeyDown(KeyCode.Q) ) DropItem();
+        if (equipped && Input.GetKeyDown(KeyCode.Q) ) {
+            DropItem();
+            m_Animator.enabled = false;
+        }
     }
     private void PickUpItem() 
     {
