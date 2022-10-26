@@ -17,7 +17,7 @@ public class EnemyUnit : MonoBehaviour
     public float walkSpeed; //How fast the enemy moves when wondering
     public float chaseSpeed; //How fast the enemy moves when agro
     public bool enemyAgro;
-
+    UnitHealth eHealth;
     public float damageTimeout = 1f;
     public float wonderTimeout = 1f;
     public float damage = 1;
@@ -34,14 +34,13 @@ public class EnemyUnit : MonoBehaviour
     // Update is called once per frame
     private void Update() {
         AgroColliders = Physics.OverlapSphere(transform.position, UnitAgroRange, checkLayers);
-        if(AgroColliders.Length == 0)
-        {
+        if(AgroColliders.Length == 0)   {
             //wandering code
             if(canWander == true) {
-            myAgent.speed = walkSpeed;
-            myAgent.SetDestination(Wander());
-            StartCoroutine(wanderTimer());
-        }
+                myAgent.speed = walkSpeed;
+                myAgent.SetDestination(Wander());
+                StartCoroutine(wanderTimer());
+            }
         } else {
         
             myAgent.SetDestination(AgroColliders[0].transform.position);
@@ -66,9 +65,11 @@ public class EnemyUnit : MonoBehaviour
     }
 
     public void DealDamage() {
+        Debug.Log("Damage is being called");
         GameObject.Instantiate(BloodHitEffect, AgroColliders[0].transform.position, AgroColliders[0].transform.rotation);
-        UnitHealth eHealth = DamageColliders[0].gameObject.GetComponent<UnitHealth>();
+        eHealth = DamageColliders[0].gameObject.GetComponent<UnitHealth>();
         eHealth.AdjustCurrentHealth(damage);
+        
     }
 
     private IEnumerator damageTimer() {
