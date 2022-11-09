@@ -25,13 +25,15 @@ public class IsoPlayerMovement : MonoBehaviour
     [SerializeField]
     private float rotateSpeed;
 
+    private Rigidbody rb;
     
     private void Awake()
     {
         _input = GetComponent<InputHandler>();
+        rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         var targetVector = new Vector3(_input.InputVector.x, 0, _input.InputVector.y);
 
@@ -54,6 +56,7 @@ public class IsoPlayerMovement : MonoBehaviour
             RotateTowardsMouseVector();
     }
 
+    //This is so the player rotates towards the mouse position
     private void RotateTowardsMouseVector()
     {
         Ray ray = cam.ScreenPointToRay(_input.MousePosition);
@@ -66,6 +69,7 @@ public class IsoPlayerMovement : MonoBehaviour
         }
     }
 
+    //This is so the player faces the direction they're moving
     private void RotateTowardMovementVector(Vector3 movementVector)
     {
         if(movementVector.magnitude == 0) { return; }

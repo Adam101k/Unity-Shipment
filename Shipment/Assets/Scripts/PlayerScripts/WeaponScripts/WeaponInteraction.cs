@@ -19,15 +19,12 @@ public class WeaponInteraction : MonoBehaviour
     {
         m_Animator = GetComponent<Animator>();
         //set up
-        if (!equipped) 
-        {
+        if (!equipped) {
             rb.isKinematic = false;
             coll.isTrigger = false;
             m_Animator.enabled = false;
         }
-        if (equipped)
-        {
-            
+        if (equipped) {
             rb.isKinematic = true;
             coll.isTrigger = true;
             carryingItem = true;
@@ -50,6 +47,7 @@ public class WeaponInteraction : MonoBehaviour
             m_Animator.enabled = false;
         }
     }
+
     private void PickUpItem() 
     {
         transform.SetParent(itemCont);
