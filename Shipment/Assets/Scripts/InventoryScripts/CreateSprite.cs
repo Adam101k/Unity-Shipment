@@ -4,6 +4,14 @@
 
 //public class CreateSprite : MonoBehaviour
 //{
+//    public static void CaptureScreenshot(string filename)
+//    {
+
+//    }
+//    private void OnMouseDown()
+//    {
+//        ScreenCapture.CaptureScreenshot("GasCan.png");
+//    }
 //    public List<GameObject> sceneObjects;
 //    public List<InventoryItemData> dataObjects;
 //    private void Awake()
