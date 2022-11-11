@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: InventoryItem_GasCan
   displayName: Gas Can
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a244368965b5abf47b322e6c69de09dd, type: 3}
   prefab: {fileID: 5407077422918533975, guid: 83f48622d9a375742ac9a6f1412b47f4, type: 3}
