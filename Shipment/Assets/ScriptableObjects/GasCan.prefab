@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5407077422918533978}
   - component: {fileID: 5407077422918533973}
   - component: {fileID: 5407077422918533972}
+  - component: {fileID: 4602660633507673386}
   m_Layer: 7
   m_Name: GasCan
   m_TagString: Untagged
@@ -136,3 +137,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4602660633507673386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407077422918533975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c39b9961d886449b4ef86e54545f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 08991b41c4d901b46a4a988da6417c47, type: 2}
