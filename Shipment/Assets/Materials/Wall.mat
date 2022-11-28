@@ -121,11 +121,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-<<<<<<< HEAD
-    - _Position: {r: 0.52954924, g: 0.4113518, b: 6.960619, a: 0}
-=======
-    - _Position: {r: 0.5, g: 0.4648908, b: 7.604999, a: 0}
->>>>>>> parent of 3236908 (Pause Menu Implemented)
+    - _Position: {r: 0.5000001, g: 0.47031036, b: 7.7786627, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []

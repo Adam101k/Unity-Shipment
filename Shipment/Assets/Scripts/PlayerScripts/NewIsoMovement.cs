@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class IsoPlayerMovement : MonoBehaviour
+public class NewIsoMovement : MonoBehaviour
 {
     private InputHandler _input;
 
