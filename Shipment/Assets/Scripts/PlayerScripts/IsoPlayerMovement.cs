@@ -13,6 +13,10 @@ public class IsoPlayerMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed;
     public float runSpeed;
+    [Header("Ground Check")]
+    public float playerHeight;
+    public LayerMask whatIsGround;
+    bool grounded;
 
     private float speed;
 
