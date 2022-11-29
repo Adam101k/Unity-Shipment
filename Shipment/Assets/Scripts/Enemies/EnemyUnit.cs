@@ -17,7 +17,7 @@ public class EnemyUnit : MonoBehaviour
     public float walkSpeed; //How fast the enemy moves when wondering
     public float chaseSpeed; //How fast the enemy moves when agro
     public bool enemyAgro;
-    UnitHealth eHealth;
+    PlayerHealth eHealth;
     public float damageTimeout = 1f;
     public float wonderTimeout = 1f;
     public float damage = 1;
@@ -67,7 +67,7 @@ public class EnemyUnit : MonoBehaviour
     public void DealDamage() {
         Debug.Log("Damage is being called");
         GameObject.Instantiate(BloodHitEffect, AgroColliders[0].transform.position, AgroColliders[0].transform.rotation);
-        eHealth = DamageColliders[0].gameObject.GetComponent<UnitHealth>();
+        eHealth = DamageColliders[0].gameObject.GetComponent<PlayerHealth>();
         eHealth.AdjustCurrentHealth(damage);
         
     }

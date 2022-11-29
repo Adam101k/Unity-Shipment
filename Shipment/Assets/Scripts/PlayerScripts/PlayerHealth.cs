@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UnitHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public float health;
     public float maxHealth;
@@ -24,13 +24,14 @@ public class UnitHealth : MonoBehaviour
         if(health == maxHealth) {
             healthBarUI.SetActive(false);
         }
-        if(health < maxHealth)
+        if(health < maxHealth && health > 0)
         {
             healthBarUI.SetActive(true);
         }
         if(health <= 0)
         {
-            Destroy(gameObject);
+            Debug.Log("Dead");
+            healthBarUI.SetActive(false);
         }
         if(health > maxHealth)
         {
