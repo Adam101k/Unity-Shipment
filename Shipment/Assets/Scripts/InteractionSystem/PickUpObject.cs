@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
 {
-    public FuelTank gasScript;
     public Rigidbody rb;
     public BoxCollider coll;
     public Transform player, gasContainer;
@@ -20,13 +19,11 @@ public class PickUpObject : MonoBehaviour
         //set up
         if (!equipped) 
         {
-            gasScript.enabled = false;
             rb.isKinematic = false;
             coll.isTrigger = false;
         }
         if (equipped)
         {
-            gasScript.enabled = true;
             rb.isKinematic = true;
             coll.isTrigger = true;
             carryingItem = true;
@@ -51,8 +48,6 @@ public class PickUpObject : MonoBehaviour
 
         rb.isKinematic = true;
         coll.isTrigger = true;
-
-        gasScript.enabled = true;
     }
     private void DropItem() 
     {
@@ -67,6 +62,5 @@ public class PickUpObject : MonoBehaviour
         //add random rotation
         float random = Random.Range(-1f, 1f);
         rb.AddTorque(new Vector3(random, random, random) * 10);
-        gasScript.enabled = false;
     }
 }

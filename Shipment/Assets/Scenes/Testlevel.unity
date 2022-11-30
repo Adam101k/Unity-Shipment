@@ -279,8 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35eff0ccb5129d346b611e823967cd61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  maxHealth: 3
+  health: 10
+  maxHealth: 10
   healthBarUI: {fileID: 857623375}
   cam: {fileID: 792349545}
   slider: {fileID: 1914931058}
@@ -9073,7 +9073,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974741173}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 2.5355415, y: 2.5, z: -4.535529}
+  m_LocalPosition: {x: -3.88, y: 2.5, z: 4.56}
   m_LocalScale: {x: 0.40000013, y: 0.4, z: 0.40000013}
   m_ConstrainProportionsScale: 0
   m_Children: []
