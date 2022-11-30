@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     private PlayerHealth playerHealth;
     private UIManager UM;
+    public bool obj1State;
+    private int scrapCollected = 0;
 
     public void Start() {
         playerHealth = player.GetComponent<PlayerHealth>();
@@ -39,6 +41,21 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver(bool gState) {
         _isGameOver = gState;
+    }
+    public void Objective1State(bool t) {
+        obj1State = t;
+    }
+    
+    public void AddObjective1() {
+        if(obj1State && scrapCollected < 5) {
+            scrapCollected += 1;
+        } else if (obj1State && scrapCollected >= 5) {
+            Object1Complete();
+            obj1State = false;
+        }
+    }
+    private void Object1Complete() {
+        //placeholder
     }
 
 }
