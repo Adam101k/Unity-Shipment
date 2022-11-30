@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class Objective1 : MonoBehaviour
 {
-    /*public GameObject ObjectiveUI;
+    public AudioSource objSFX;
+    public GameObject ObjectiveUI;
     public GameObject trigger;
-    
+    public GameObject theText;
     private void OnTriggerEnter(Collider other) {
-        if(Collider.tag == "player") {
-            StartCourutine(startMissionObj());
+        if(other.tag == "Player") {
+            StartCoroutine(StartMissionObj());
         }
     }
 
     private IEnumerator StartMissionObj() {
-        ObjectiveUI.getComponenent<Text>().text = "Collect 5 Scrap Metal";
+        theText.GetComponent<Text>().text = "Collect 5 Scrap Metal";
+        yield return new WaitForSeconds(5.3f);
+        trigger.SetActive(false);
     }
-    */
 }

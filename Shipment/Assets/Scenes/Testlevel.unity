@@ -9323,9 +9323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedbaf4b465d91a428480a5399171c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myUIGroup: {fileID: 5274111366042177628}
-  fadeIn: 0
-  fadeOut: 0
+  fadingCanvasGroup: {fileID: 5274111366042177628}
+  isFaded: 1
 --- !u!1 &34472778854412781
 GameObject:
   m_ObjectHideFlags: 0
