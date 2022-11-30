@@ -22,10 +22,9 @@ public class Objective1 : MonoBehaviour
 
     private IEnumerator StartMissionObj() {
         //objSFX.Play();
-        Debug.LogError("Mission Started");
         theText.SetText("Collect 5 Scrap Metal");
+        yield return new WaitForSeconds(5f);
         GM.Objective1State(true);
-        yield return new WaitForSeconds(5.3f);
         trigger.SetActive(false);
         Destroy(gameObject);
     }

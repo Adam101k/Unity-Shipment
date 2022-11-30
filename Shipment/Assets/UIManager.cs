@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -20,9 +21,12 @@ public class UIManager : MonoBehaviour
     public PauseMenu PM;
     private Fade OMF;
     public GameObject gameOverMenuUI;
+    public TextMeshProUGUI objectiveText;
+    private GameManager GM;
     public void Start() {
         PM = this.GetComponent<PauseMenu>();
         OMF = this.GetComponent<Fade>();
+        GM = this.GetComponent<GameManager>();
     }
 
     public void Update() {
@@ -59,5 +63,8 @@ public class UIManager : MonoBehaviour
 
     public void RestartLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void DisplayObjective1() {
+        objectiveText.SetText(GM.scrapCollected + "/5 Scrap Metal Collected");
     }
 }

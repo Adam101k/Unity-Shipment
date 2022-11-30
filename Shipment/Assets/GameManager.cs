@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private PlayerHealth playerHealth;
     private UIManager UM;
     public bool obj1State;
-    private int scrapCollected = 0;
+    public int scrapCollected = 0;
 
     public void Start() {
         playerHealth = player.GetComponent<PlayerHealth>();
@@ -44,11 +44,17 @@ public class GameManager : MonoBehaviour
     }
     public void Objective1State(bool t) {
         obj1State = t;
+        if(obj1State == true) {
+            UM.DisplayObjective1();
+            GameObject objectiveItems = GameObject.FindWithTag("ObjCollectable");
+            objectiveItems.GetComponent<Outline>().enabled = true;
+        }
     }
     
     public void AddObjective1() {
         if(obj1State && scrapCollected < 5) {
             scrapCollected += 1;
+            UM.DisplayObjective1();
         } else if (obj1State && scrapCollected >= 5) {
             Object1Complete();
             obj1State = false;
