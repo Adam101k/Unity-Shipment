@@ -49,7 +49,7 @@ public class ShipController : MonoBehaviour
     void PlayerDismount() {
         riding = false;
         distanceCollider[0].gameObject.transform.SetParent(null);
-        distanceCollider[0].gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        distanceCollider[0].gameObject.GetComponent<Rigidbody>().isKinematic = false;
         distanceCollider[0].gameObject.GetComponent<IsoPlayerMovement>().enabled = true;
     }
     private void OnDrawGizmos() {
