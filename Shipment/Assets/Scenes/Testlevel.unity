@@ -4695,7 +4695,6 @@ GameObject:
   - component: {fileID: 929221336}
   - component: {fileID: 929221338}
   - component: {fileID: 929221337}
-  - component: {fileID: 929221339}
   m_Layer: 0
   m_Name: ObjectiveDisplay
   m_TagString: Untagged
@@ -4759,26 +4758,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929221335}
   m_CullTransparentMesh: 1
---- !u!95 &929221339
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929221335}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 152e7c3cfdb299649b7ab0d2863abbe3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &951035252
 GameObject:
   m_ObjectHideFlags: 0
@@ -9225,6 +9204,7 @@ GameObject:
   - component: {fileID: 2123525324}
   - component: {fileID: 2123525326}
   - component: {fileID: 2123525325}
+  - component: {fileID: 2123525327}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -9331,6 +9311,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 41712972}
+--- !u!114 &2123525327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123525319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedbaf4b465d91a428480a5399171c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myUIGroup: {fileID: 5274111366042177628}
+  fadeIn: 0
+  fadeOut: 0
 --- !u!1 &34472778854412781
 GameObject:
   m_ObjectHideFlags: 0
@@ -10757,6 +10752,7 @@ GameObject:
   - component: {fileID: 5274111366042177624}
   - component: {fileID: 5274111366042177625}
   - component: {fileID: 5274111366042177626}
+  - component: {fileID: 5274111366042177628}
   m_Layer: 0
   m_Name: OCanvas
   m_TagString: Untagged
@@ -10847,6 +10843,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &5274111366042177628
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5274111366042177604}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5358424114860805116
 GameObject:
   m_ObjectHideFlags: 0

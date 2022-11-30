@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class Objective1 : MonoBehaviour
 {
-    public GameObject ObjectiveUI;
+    /*public GameObject ObjectiveUI;
     public GameObject trigger;
     
     private void OnTriggerEnter(Collider other) {
         if(Collider.tag == "player") {
-            StartCourutine(missionObj());
+            StartCourutine(startMissionObj());
         }
     }
 
-    private IEnumerator missionObj() {
+    private IEnumerator StartMissionObj() {
         ObjectiveUI.getComponenent<Text>().text = "Collect 5 Scrap Metal";
     }
+    */
 }

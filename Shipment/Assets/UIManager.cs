@@ -18,9 +18,11 @@ public class UIManager : MonoBehaviour
     }
 
     public PauseMenu PM;
+    private Fade OMF;
     public GameObject gameOverMenuUI;
     public void Start() {
         PM = this.GetComponent<PauseMenu>();
+        OMF = this.GetComponent<Fade>();
     }
 
     public void Update() {
@@ -34,6 +36,10 @@ public class UIManager : MonoBehaviour
             {
                 PM.Pause();
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Tab)) 
+        {
+            OMF.Fader();
         }
     }
 
