@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 //https://foxxthom.medium.com/game-manager-one-manager-to-rule-them-all-1c06afa72b23
 public class GameManager : MonoBehaviour
@@ -25,10 +26,20 @@ public class GameManager : MonoBehaviour
     private UIManager UM;
     public bool obj1State;
     public int scrapCollected = 0;
+    public GameObject ObjectMusic;
+    private AudioSource AudioSource;
+    public AudioClip ObjectiveUpdateSFX;
+    public AudioClip ObjectiveItemSfx;
+    public bool PlayerInCombat;
+    private MusicPlay MP;
+    private AudioClip currentClip;
 
     public void Start() {
         playerHealth = player.GetComponent<PlayerHealth>();
         UM = this.GetComponent<UIManager>();
+        ObjectMusic = GameObject.FindWithTag("GameMusic");
+        AudioSource = ObjectMusic.GetComponent<AudioSource>();
+        MP = ObjectMusic.GetComponent<MusicPlay>();
     }
 
     //checks if the player died
@@ -38,7 +49,15 @@ public class GameManager : MonoBehaviour
             UM.DisplayGameOver();
             player.SetActive(false);
         }
+        if(PlayerInCombat) {
+            PlayMusic(MP.BattleMusicInitial);
+            Invoke("PlayMusic(MP.BattleMusicLoop)", 108f);
+        } else {
+            PlayMusic(MP.AtmoMusicInital);
+            Invoke("PlayMusic(MP.AtmoMusicLoop)", 108f);
+        }
     }
+    
     public void GameOver(bool gState) {
         _isGameOver = gState;
     }
@@ -46,6 +65,7 @@ public class GameManager : MonoBehaviour
         obj1State = t;
         if(obj1State == true) {
             UM.DisplayObjective1();
+            AudioSource.PlayOneShot(ObjectiveUpdateSFX);
             GameObject objectiveItems = GameObject.FindWithTag("ObjCollectable");
             objectiveItems.GetComponent<Outline>().enabled = true;
         }
@@ -54,6 +74,7 @@ public class GameManager : MonoBehaviour
     public void AddObjective1() {
         if(obj1State && scrapCollected < 5) {
             scrapCollected += 1;
+            AudioSource.PlayOneShot(ObjectiveItemSfx);
             UM.DisplayObjective1();
         } else if (obj1State && scrapCollected >= 5) {
             Object1Complete();
@@ -63,5 +84,15 @@ public class GameManager : MonoBehaviour
     private void Object1Complete() {
         //placeholder
     }
-
+    public void PlayMusic(AudioClip clip) {
+        if(currentClip != clip) {
+            AudioSource.Stop(); //if not, it stops playback and changes the clip
+            currentClip = clip;
+            AudioSource.PlayOneShot(currentClip);
+        } else {
+            if(!AudioSource.isPlaying) {
+                AudioSource.PlayOneShot(currentClip);
+            }
+        }
+    }
 }
