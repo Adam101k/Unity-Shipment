@@ -15,6 +15,8 @@ public class MusicPlay : MonoBehaviour
     public AudioClip AtmoMusicLoop;
     public AudioClip MenuMusicInital;
     public AudioClip MenuMusicLoop;
+    public AudioClip EnemyAttack;
+    public AudioClip PlayerAttack;
     // Start is called before the first frame update
     private void Start()
     {

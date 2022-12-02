@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 06f7d0a16602d684093ec6c94d104c52
+guid: 3e1d867a4a7e4284d94e5450029bcb17
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_claw
-    second: {fileID: 2100000, guid: 9acdf514e7a407a44a8ad68048e13079, type: 2}
+      name: large_claw2
+    second: {fileID: 2100000, guid: 0c9fd942463fc6447855b94c379d8ca6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

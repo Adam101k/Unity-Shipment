@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PMeleeWeapons : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     public float damageTimeout = 1f;
     public bool canDealDamage;
     public float damage = 1;
@@ -16,10 +17,16 @@ public class PMeleeWeapons : MonoBehaviour
     public GameObject hitEffect;
     Animator anim;
     public WeaponInteraction weaponI;
+    private GameObject ObjectMusic;
+    private AudioSource AudioSource;
+    private MusicPlay MP;
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         canDealDamage = true;
+        ObjectMusic = GameObject.FindWithTag("GameMusic");
+        MP = ObjectMusic.GetComponent<MusicPlay>();
+        AudioSource = ObjectMusic.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +36,7 @@ public class PMeleeWeapons : MonoBehaviour
         if(canDealDamage == true && weaponI.equipped && Input.GetMouseButtonDown(0)) {
             anim.SetTrigger("Attack");
             DealDamage();
+            AudioSource.PlayOneShot(MP.PlayerAttack);
             StartCoroutine(damageTimer());
         }
     }

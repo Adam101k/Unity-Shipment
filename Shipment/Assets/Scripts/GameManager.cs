@@ -66,8 +66,10 @@ public class GameManager : MonoBehaviour
         if(obj1State == true) {
             UM.DisplayObjective1();
             AudioSource.PlayOneShot(ObjectiveUpdateSFX);
-            GameObject objectiveItems = GameObject.FindWithTag("ObjCollectable");
-            objectiveItems.GetComponent<Outline>().enabled = true;
+            GameObject[] objectiveItems = GameObject.FindGameObjectsWithTag("ObjCollectable");
+            foreach(GameObject objItem in objectiveItems) {
+                objItem.GetComponent<Outline>().enabled = true;
+            }
         }
     }
     
