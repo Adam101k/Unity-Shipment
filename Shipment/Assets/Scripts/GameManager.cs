@@ -56,10 +56,10 @@ public class GameManager : MonoBehaviour
         }
         if(PlayerInCombat) {
             PlayMusic(MP.BattleMusicInitial);
-            //Invoke("PlayMusic(MP.BattleMusicLoop)", 108f);
+            Invoke("PlayMusic(MP.BattleMusicLoop)", 108f);
         } else {
             PlayMusic(MP.AtmoMusicInital);
-            //Invoke("PlayMusic(MP.AtmoMusicLoop)", 108f);
+            Invoke("PlayMusic(MP.AtmoMusicLoop)", 108f);
         }
     }
     
