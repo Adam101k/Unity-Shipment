@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.Audio;
 
 public class EnemyUnit : MonoBehaviour
 {
@@ -26,10 +26,16 @@ public class EnemyUnit : MonoBehaviour
 
     public GameObject BloodHitEffect;
     private Vector3 walkPoint;
+    private GameObject ObjectMusic;
+    private AudioSource AudioSource;
+    private MusicPlay MP;
 
     // Start is called before the first frame update
     void Start() {
         myAgent = GetComponent<NavMeshAgent>();
+        ObjectMusic = GameObject.FindWithTag("GameMusic");
+        MP = ObjectMusic.GetComponent<MusicPlay>();
+        AudioSource = ObjectMusic.GetComponent<AudioSource>();
     }
     // Update is called once per frame
     private void Update() {
@@ -59,6 +65,7 @@ public class EnemyUnit : MonoBehaviour
         if(canTakeDamage == true && enemyAgro == true && DamageColliders[0].gameObject.tag == "Player")
         {
             DealDamage();
+            AudioSource.PlayOneShot(MP.EnemyAttack);
             StartCoroutine(damageTimer());
             myAgent.ResetPath();
         }

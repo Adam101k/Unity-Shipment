@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
+using UnityEngine.Audio;
+
 
 public class IsoPlayerMovement : MonoBehaviour
 {
     private InputHandler _input;
+    [SerializeField]
+    public AudioSource WalkSFX;
+    public AudioSource RunSFX;
 
     [SerializeField]
     public VisualEffect runParticle; 
@@ -47,6 +52,14 @@ public class IsoPlayerMovement : MonoBehaviour
         }
         if(Input.GetKey("left shift") && movementVector.magnitude > 0) {
             CreateDust();
+            WalkSFX.enabled = false;
+            RunSFX.enabled = true;
+        } else if (movementVector.magnitude > 0) {
+            WalkSFX.enabled = true;
+            RunSFX.enabled = false;
+        } else {
+            WalkSFX.enabled = false;
+            RunSFX.enabled = false;
         }
         //Rotate in the direction we are traveling
         RotateTowardMovementVector(movementVector);

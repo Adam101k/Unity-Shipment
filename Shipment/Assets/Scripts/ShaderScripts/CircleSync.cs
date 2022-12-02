@@ -9,6 +9,8 @@ public class CircleSync : MonoBehaviour
 
 
     public Material WallMaterial;
+    public Material WallMaterial1;
+    //public Material WallMaterial2;
     public Camera Camera;
     public LayerMask Mask;
 
@@ -26,8 +28,12 @@ public class CircleSync : MonoBehaviour
             // From here on out, put the logic you already have
             if (Physics.Raycast(rayToCam, 3000, Mask)) {
             WallMaterial.SetFloat(SizeID, 1);
+            WallMaterial1.SetFloat(SizeID, 1);
+            //WallMaterial2.SetFloat(SizeID, 1);
             } else {
             WallMaterial.SetFloat(SizeID, 0);
+            WallMaterial1.SetFloat(SizeID, 0);
+            //WallMaterial2.SetFloat(SizeID, 0);
             }
         }
 
