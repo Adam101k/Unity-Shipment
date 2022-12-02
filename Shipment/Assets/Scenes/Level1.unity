@@ -35853,8 +35853,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7500921, z: 7.070973}
-  m_Center: {x: 3.3461286e-11, y: 0.37504745, z: -3.0354874}
+  m_Size: {x: 0.9042114, y: 1.7500921, z: 31.379532}
+  m_Center: {x: 0.04789378, y: 0.37504745, z: -15.189816}
 --- !u!33 &855613839
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -51732,8 +51732,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7500921, z: 7.070973}
-  m_Center: {x: 3.3461286e-11, y: 0.37504745, z: -3.0354874}
+  m_Size: {x: 1, y: 1.7500921, z: 25.426344}
+  m_Center: {x: 0.00000050767875, y: 0.37504745, z: -18.837666}
 --- !u!33 &1263817721
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -54087,7 +54087,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351581991}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 616.52, y: 59.921337, z: 83.04}
+  m_LocalPosition: {x: 627.56, y: 59.921337, z: 91.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63516,8 +63516,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2161423, y: 1.7500921, z: 7.070973}
-  m_Center: {x: -0.6513435, y: 0.37504745, z: -3.0354674}
+  m_Size: {x: 1.2161424, y: 1.7500921, z: 9.426139}
+  m_Center: {x: -0.65134305, y: 0.37504745, z: -1.8578868}
 --- !u!33 &1609347046
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -89702,6 +89702,7 @@ MonoBehaviour:
   healthBarUI: {fileID: 6685636169015309654}
   cam: {fileID: 3089240955469917057}
   slider: {fileID: 6685636167923464555}
+  regeneration: 1
 --- !u!136 &3259303792628539518
 CapsuleCollider:
   m_ObjectHideFlags: 0

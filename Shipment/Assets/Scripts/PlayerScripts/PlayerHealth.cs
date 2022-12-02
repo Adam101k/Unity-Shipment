@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +11,13 @@ public class PlayerHealth : MonoBehaviour
     public GameObject healthBarUI;
     public GameObject cam;
     public Slider slider;
+    public float regeneration;
 
     void Start()
     {
         health = maxHealth;
         slider.value = CalculateHealth();
+        InvokeRepeating("Regenerate", 0.0f, regeneration);
     }
 
     void Update()
@@ -48,4 +51,12 @@ public class PlayerHealth : MonoBehaviour
     {
         return health/maxHealth;
     }
+    public void Regenerate() {
+        if(health < maxHealth && health > 0) {
+            health++;
+        }
+    }
+
+   
+    
 }
