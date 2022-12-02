@@ -67,4 +67,7 @@ public class UIManager : MonoBehaviour
     public void DisplayObjective1() {
         objectiveText.SetText(GM.scrapCollected + "/5 Scrap Metal Collected");
     }
+    public void ShipIsNowRideable() {
+        objectiveText.SetText("The Ship is now Active (Located in Center)");
+    }
 }

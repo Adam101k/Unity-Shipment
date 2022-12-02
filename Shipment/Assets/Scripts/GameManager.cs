@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     public bool PlayerInCombat;
     private MusicPlay MP;
     private AudioClip currentClip;
+    private GameObject playerShip;
+    private ShipController SC;
 
     public void Start() {
         playerHealth = player.GetComponent<PlayerHealth>();
@@ -40,6 +42,9 @@ public class GameManager : MonoBehaviour
         ObjectMusic = GameObject.FindWithTag("GameMusic");
         AudioSource = ObjectMusic.GetComponent<AudioSource>();
         MP = ObjectMusic.GetComponent<MusicPlay>();
+        playerShip = GameObject.FindWithTag("Ship");
+        SC = playerShip.GetComponent<ShipController>();
+        SC.isRidable = false;
     }
 
     //checks if the player died
@@ -74,17 +79,19 @@ public class GameManager : MonoBehaviour
     }
     
     public void AddObjective1() {
-        if(obj1State && scrapCollected < 5) {
+        if (obj1State && scrapCollected < 5) {
             scrapCollected += 1;
             AudioSource.PlayOneShot(ObjectiveItemSfx);
             UM.DisplayObjective1();
-        } else if (obj1State && scrapCollected >= 5) {
-            Object1Complete();
+        }
+        if (obj1State && scrapCollected >= 5) {
             obj1State = false;
+            Object1Complete();
         }
     }
     private void Object1Complete() {
-        //placeholder
+        UM.ShipIsNowRideable();
+        SC.isRidable = true;
     }
     public void PlayMusic(AudioClip clip) {
         if(currentClip != clip) {

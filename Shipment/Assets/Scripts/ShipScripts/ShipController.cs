@@ -10,6 +10,7 @@ public class ShipController : MonoBehaviour
     public float rideRange;
     public bool riding;
     public ShipMovement p;
+    public bool isRidable;
     void Start()
     {
         if (!riding) {
@@ -27,7 +28,7 @@ public class ShipController : MonoBehaviour
         if(distanceCollider.Length == 0) {
 
         } else {
-            if(!riding && Input.GetKeyDown(KeyCode.E)) {
+            if(!riding && Input.GetKeyDown(KeyCode.E) && isRidable) {
                 PlayerRide();
                 p.enabled = true;
             }
