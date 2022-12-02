@@ -9,6 +9,8 @@ public class PickUpObject : MonoBehaviour
     public BoxCollider coll;
     public Transform player, gasContainer;
 
+    public Items item;
+
     public float pickUpRange;
     public float dropForwardForce, dropUpwardForce;
 
@@ -45,6 +47,8 @@ public class PickUpObject : MonoBehaviour
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
         //transform.localScale = Vector3.one;
+
+        InventoryManager.Instance.Add(item);
 
         equipped = true;
         carryingItem = true;
