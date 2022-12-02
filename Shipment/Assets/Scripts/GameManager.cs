@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using TMPro;
 
 //https://foxxthom.medium.com/game-manager-one-manager-to-rule-them-all-1c06afa72b23
 public class GameManager : MonoBehaviour
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     private PlayerHealth playerHealth;
     private UIManager UM;
     public bool obj1State;
+    public TextMeshProUGUI theText;
     public int scrapCollected = 0;
     public GameObject ObjectMusic;
     private AudioSource AudioSource;
@@ -56,10 +58,10 @@ public class GameManager : MonoBehaviour
         }
         if(PlayerInCombat) {
             PlayMusic(MP.BattleMusicInitial);
-            Invoke("PlayMusic(MP.BattleMusicLoop)", 108f);
+            //Invoke("PlayMusic(MP.BattleMusicLoop)", 108f);
         } else {
             PlayMusic(MP.AtmoMusicInital);
-            Invoke("PlayMusic(MP.AtmoMusicLoop)", 108f);
+            //Invoke("PlayMusic(MP.AtmoMusicLoop)", 108f);
         }
     }
     
@@ -93,6 +95,7 @@ public class GameManager : MonoBehaviour
         UM.ShipIsNowRideable();
         SC.isRidable = true;
     }
+
     public void PlayMusic(AudioClip clip) {
         if(currentClip != clip) {
             AudioSource.Stop(); //if not, it stops playback and changes the clip

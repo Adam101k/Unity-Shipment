@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-
+using UnityEngine.SceneManagement;
 public class MusicPlay : MonoBehaviour
 {
     public GameObject ObjectMusic;
@@ -26,6 +26,13 @@ public class MusicPlay : MonoBehaviour
         //Set Volume
         //MusicVolume = PlayerPrefs.GetFloat("volume");
         AudioSource.volume = MusicVolume;
+        if(SceneManager.GetActiveScene().name == "MainMenu") {
+            AudioSource.Stop();
+            AudioSource.PlayOneShot(MenuMusicInital);
+            AudioSource.loop = true;
+        } else {
+            AudioSource.loop = false;
+        }
     }
 
     // Update is called once per frame
