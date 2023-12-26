@@ -1,6 +1,6 @@
-# Unity-Shipment
+# Shipment
 
-This was developed as a part of California State University Fullerton's Video Game Design Club.
+This was developed as a part of California State University Fullerton's Video Game Design Club, Winter 2022.
 
 You find a playable version of this game on [itch.io.](https://stickguy101.itGameo/shipment)
 
